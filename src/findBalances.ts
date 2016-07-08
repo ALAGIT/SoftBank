@@ -1,3 +1,7 @@
+import { Trans2013 } from './Transactions2013';
+
+var List0 = new Trans2013();
+
 export class findBalances {
 
     private List: string[] =
@@ -210,34 +214,52 @@ export class findBalances {
     findBalances() {
 
         var x: number = 0;
-        var y: number = 0;
+        var y1: number = 0;
+        var y2: number = 0;
         var z: number = 0;
         var zchange: number = 0;
         var Balance: string = "";
 
         while (x<this.names.length) {
 
-            if (this.List[y+1] == this.names[x]) {
-                zchange = +this.List[y+4];
+            if (this.List[y1+1] == this.names[x]) {
+                zchange = +this.List[y1+4];
                 z = z + zchange;
             }
-            if (this.List[y+2] == this.names[x]) {
-                zchange = +this.List[y+4];
+            if (this.List[y1+2] == this.names[x]) {
+                zchange = +this.List[y1+4];
                 z = z - zchange;
             }
 
-            if (x<this.names.length && y == this.List.length) {
+            if (List0.List[y2+3] == this.names[x]) {
+                zchange = +List0.List[y2+9];
+                z = z + zchange;
+            }
+            if (List0.List[y2+5] == this.names[x]) {
+                zchange = +List0.List[y2+9];
+                z = z - zchange;
+            }
+
+            if (y1 == this.List.length && y2 == List0.List.length) {
 
                 Balance = this.names[x] + " is owed £" + z.toFixed(2);
                 console.log(Balance);
                 x=x+1;
 
-                y=0;
+                y1=0;
+                y2=0;
                 z=0;
                 zchange=0;
             }
+            else if (y1 == this.List.length) {
+                y2=y2+10;
+            }
+            else if (y2 == List0.List.length) {
+                y1=y1+5;
+            }
             else {
-                y=y+5;
+                y1=y1+5;
+                y2=y2+10;
             }
   
         }

@@ -1,3 +1,7 @@
+import { Trans2013 } from './Transactions2013';
+
+var List0 = new Trans2013();
+
 export class findAccount {
 
     private List: string[] =
@@ -204,29 +208,53 @@ export class findAccount {
 
     findAccount(name: string) {
 
-        var x: number = 0;
+        var x1: number = 0;
+        var x2: number = 0;
         console.log('Debits:')
         var debit: string = "";
-        while (x<1000) {
-            if (this.List[x+1] == name) {
-                debit = ' - £' + this.List[x+4] + ' to ' + this.List[x+2] + ' on ' + this.List[x] + ' for ' + this.List[x+3];
+
+        while (x1<List0.List.length) {
+            if (List0.List[x1+3] == name) {
+                debit = ' - £' + List0.List[x1+9] + ' to ' + List0.List[x1+5] + ' on ' + List0.List[x1+1].substring(0,10) + ' for ' + List0.List[x1+7];
                 console.log(debit);
                 //Person A is 'name' is debitted.
             }
-            x=x+5;
+            x1=x1+10;
+            //Moves to next transaction.
+        }
+
+        while (x2<this.List.length) {
+            if (this.List[x2+1] == name) {
+                debit = ' - £' + this.List[x2+4] + ' to ' + this.List[x2+2] + ' on ' + this.List[x2] + ' for ' + this.List[x2+3];
+                console.log(debit);
+                //Person A is 'name' is debitted.
+            }
+            x2=x2+5;
             //Moves to the next row.
         }
 
-        var y: number = 0;
+        var y1: number = 0;
+        var y2: number = 0;
         console.log('Credits:')
         var credit: string = "";
-        while (y<this.List.length) {   
-            if (this.List[y+2] == name) {
-                credit = ' - £' + this.List[y+4] + ' from ' + this.List[y+1] + ' on ' + this.List[y] + ' for ' + this.List[y+3];
+
+        while (y1<List0.List.length) {   
+            if (List0.List[y1+5] == name) {
+                credit = ' - £' + List0.List[y1+9] + ' from ' + List0.List[y1+3] + ' on ' + List0.List[y1+1].substring(0,10) + ' for ' + List0.List[y1+7];
                 console.log(credit);
                 //Person A is 'name' is debitted.
             }
-            y=y+5;
+            y1=y1+10;
+            //Moves to the next row.
+        }
+
+        while (y2<this.List.length) {   
+            if (this.List[y2+2] == name) {
+                credit = ' - £' + this.List[y2+4] + ' from ' + this.List[y2+1] + ' on ' + this.List[y2] + ' for ' + this.List[y2+3];
+                console.log(credit);
+                //Person A is 'name' is debitted.
+            }
+            y2=y2+5;
             //Moves to the next row.
         }
 

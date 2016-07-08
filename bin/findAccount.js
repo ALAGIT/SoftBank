@@ -1,4 +1,6 @@
 "use strict";
+var Transactions2013_1 = require('./Transactions2013');
+var List0 = new Transactions2013_1.Trans2013();
 var findAccount = (function () {
     function findAccount() {
         this.List = 
@@ -203,25 +205,41 @@ var findAccount = (function () {
             '42121', 'Ben B', 'Jon A', 'Pokemon Training', '10.91'];
     }
     findAccount.prototype.findAccount = function (name) {
-        var x = 0;
+        var x1 = 0;
+        var x2 = 0;
         console.log('Debits:');
         var debit = "";
-        while (x < 1000) {
-            if (this.List[x + 1] == name) {
-                debit = ' - £' + this.List[x + 4] + ' to ' + this.List[x + 2] + ' on ' + this.List[x] + ' for ' + this.List[x + 3];
+        while (x1 < List0.List.length) {
+            if (List0.List[x1 + 3] == name) {
+                debit = ' - £' + List0.List[x1 + 9] + ' to ' + List0.List[x1 + 5] + ' on ' + List0.List[x1 + 1].substring(0, 10) + ' for ' + List0.List[x1 + 7];
                 console.log(debit);
             }
-            x = x + 5;
+            x1 = x1 + 10;
         }
-        var y = 0;
+        while (x2 < this.List.length) {
+            if (this.List[x2 + 1] == name) {
+                debit = ' - £' + this.List[x2 + 4] + ' to ' + this.List[x2 + 2] + ' on ' + this.List[x2] + ' for ' + this.List[x2 + 3];
+                console.log(debit);
+            }
+            x2 = x2 + 5;
+        }
+        var y1 = 0;
+        var y2 = 0;
         console.log('Credits:');
         var credit = "";
-        while (y < this.List.length) {
-            if (this.List[y + 2] == name) {
-                credit = ' - £' + this.List[y + 4] + ' from ' + this.List[y + 1] + ' on ' + this.List[y] + ' for ' + this.List[y + 3];
+        while (y1 < List0.List.length) {
+            if (List0.List[y1 + 5] == name) {
+                credit = ' - £' + List0.List[y1 + 9] + ' from ' + List0.List[y1 + 3] + ' on ' + List0.List[y1 + 1].substring(0, 10) + ' for ' + List0.List[y1 + 7];
                 console.log(credit);
             }
-            y = y + 5;
+            y1 = y1 + 10;
+        }
+        while (y2 < this.List.length) {
+            if (this.List[y2 + 2] == name) {
+                credit = ' - £' + this.List[y2 + 4] + ' from ' + this.List[y2 + 1] + ' on ' + this.List[y2] + ' for ' + this.List[y2 + 3];
+                console.log(credit);
+            }
+            y2 = y2 + 5;
         }
     };
     ;
