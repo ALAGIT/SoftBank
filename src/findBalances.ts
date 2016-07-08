@@ -178,7 +178,6 @@ export class findBalances {
 '42056',	'Dan W',	'Ben B',	'Pokemon Training',	'0.5',
 '42059',	'Todd',	'Gergana I',	'Coffee',	'9.08',
 '42061',	'Stephen S',	'Jon A',	'Pokemon Training',	'4.23',
-'42064',	'Ben B',	'Sam N',	'Lunch',	'One Cheeseburger',
 '42065',	'Todd',	'Chris W',	'Sandbox Help',	'1.92',
 '42067',	'Laura B',	'Jon A',	'Sandcastle Help',	'9.09',
 '42069',	'Stephen S',	'Gergana I',	'Lego Assistance',	'9.4',
@@ -201,8 +200,7 @@ export class findBalances {
 '42117',	'Tim L',	'Todd',	'Misc Morale',	'8.1',
 '42118',	'Tim L',	'Sarah T',	'Arcade Social',	'6.38',
 '42120',	'Jon A',	'Todd',	'Stationary Items',	'8.44',
-'42121',	'Ben B',	'Jon A',	'Pokemon Training',	'10.91',
-'Last Thursday',	'Sarah T',	'Dan W',	'Beers',	'5.42'];
+'42121',	'Ben B',	'Jon A',	'Pokemon Training',	'10.91'];
 
     private names: string[] =
 //This lists all the required names.
@@ -228,7 +226,7 @@ export class findBalances {
                 z = z - zchange;
             }
 
-            if (x<this.names.length && y == 1000) {
+            if (x<this.names.length && y == this.List.length) {
 
                 Balance = this.names[x] + " is owed £" + z.toFixed(2);
                 console.log(Balance);

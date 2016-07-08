@@ -1,0 +1,4 @@
+What they've done wrong:
+
+ - Failure to keep consistency with dates; changing from standard format to using 'Last Thursday' as a date.
+ - Failure to keep consistenct with credit amounts; changing from quantitive values to 'One Cheeseburger'.
