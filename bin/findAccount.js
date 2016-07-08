@@ -151,15 +151,66 @@ var findAccount = (function () {
             '41995', 'Dan W', 'Jon A', 'Lunch', '3.66',
             '41998', 'Todd', 'Rob S', 'Lego Assistance', '1.86',
             '42001', 'Ben B', 'Laura B', 'Coffee', '1.44',
-            '42002', 'Ben B', 'Sam N', 'Coffee', '5.26'];
+            '42002', 'Ben B', 'Sam N', 'Coffee', '5.26',
+            '42005', 'Laura B', 'Sarah T', 'Misc Morale', '10.54',
+            '42008', 'Stephen S', 'Gergana I', 'Lunch', '3.22',
+            '42011', 'Ben B', 'Jon A', 'Fantasy Football', '9.93',
+            '42015', 'Ben B', 'Todd', 'Lunch', '7.33',
+            '42016', 'Laura B', 'Ben B', 'Beers', '8.94',
+            '42019', 'Todd', 'Rob S', 'Beers', '10.19',
+            '42020', 'Laura B', 'Jon A', 'Lego Assistance', '0.69',
+            '42022', 'Jon A', 'Sarah T', 'Coffee', '10.73',
+            '42026', 'Gergana I', 'Todd', 'Coffee', '0.8',
+            '42028', 'Gergana I', 'Chris W', 'Coffee', '8.49',
+            '42031', 'Laura B', 'Tim L', 'Jenkins Fees', '0.52',
+            '42033', 'Sam N', 'Chris W', 'Lunch', '9.01',
+            '42036', 'Stephen S', 'Laura B', 'Coffee', '7.53',
+            '42037', 'Stephen S', 'Rob S', 'Fantasy Football', '7.43',
+            '42039', 'Rob S', 'Stephen S', 'Fantasy Football', '5.78',
+            '42041', 'Dan W', 'Gergana I', 'Automated Testing Services', '10.29',
+            '42042', 'Jon A', 'Chris W', 'Rails Consultancy', '7.37',
+            '42045', 'Sam N', 'Gergana I', 'Sandbox Help', '9.84',
+            '42046', 'Chris W', 'Stephen S', 'Misc Morale', '0.68',
+            '42048', 'Laura B', 'Gergana I', 'Beers', '6.56',
+            '42051', 'Chris W', 'Dan W', 'Jenkins Fees', '1.28',
+            '42052', 'Sarah T', 'Dan W', 'Sandbox Help', '11.48',
+            '42053', 'Stephen S', 'Rob S', 'Lego Assistance', '4.83',
+            '42056', 'Dan W', 'Ben B', 'Pokemon Training', '0.5',
+            '42059', 'Todd', 'Gergana I', 'Coffee', '9.08',
+            '42061', 'Stephen S', 'Jon A', 'Pokemon Training', '4.23',
+            '42064', 'Ben B', 'Sam N', 'Lunch', 'One Cheeseburger',
+            '42065', 'Todd', 'Chris W', 'Sandbox Help', '1.92',
+            '42067', 'Laura B', 'Jon A', 'Sandcastle Help', '9.09',
+            '42069', 'Stephen S', 'Gergana I', 'Lego Assistance', '9.4',
+            '42071', 'Ben B', 'Sam N', 'Pokemon Training', '11.32',
+            '42074', 'Stephen S', 'Jon A', 'Sandcastle Help', '11.57',
+            '42078', 'Todd', 'Sam N', 'Pokemon Training', '2.29',
+            '42082', 'Laura B', 'Chris W', 'Coffee', '9.96',
+            '42084', 'Jon A', 'Gergana I', 'Beers', '7.54',
+            '42088', 'Gergana I', 'Ben B', 'Automated Testing Services', '2.39',
+            '42091', 'Stephen S', 'Tim L', 'Lunch', '5.83',
+            '42092', 'Gergana I', 'Ben B', 'Audit and Other Financial Services', '10.85',
+            '42093', 'Tim L', 'Todd', 'Pokemon Training', '8.6',
+            '42096', 'Stephen S', 'Chris W', 'Pokemon Training', '1.11',
+            '42099', 'Chris W', 'Ben B', 'Lunch', '0.96',
+            '42103', 'Chris W', 'Rob S', 'Audit and Other Financial Services', '11.79',
+            '42106', 'Gergana I', 'Laura B', 'Stationary Items', '8.37',
+            '42107', 'Laura B', 'Tim L', 'Services Rendered', '1.27',
+            '42109', 'Ben B', 'Sam N', 'Lego Assistance', '8.5',
+            '42113', 'Stephen S', 'Chris W', 'White Water Rafting', '8.91',
+            '42117', 'Tim L', 'Todd', 'Misc Morale', '8.1',
+            '42118', 'Tim L', 'Sarah T', 'Arcade Social', '6.38',
+            '42120', 'Jon A', 'Todd', 'Stationary Items', '8.44',
+            '42121', 'Ben B', 'Jon A', 'Pokemon Training', '10.91',
+            'Last Thursday', 'Sarah T', 'Dan W', 'Beers', '5.42'];
     }
     findAccount.prototype.findAccount = function (name) {
         var x = 0;
         console.log('Debits:');
         var debit = "";
-        while (x < 745) {
+        while (x < 1000) {
             if (this.List[x + 1] == name) {
-                debit = ' - To ' + this.List[x + 2] + ' on ' + this.List[x] + ' for ' + this.List[x + 3];
+                debit = ' - £' + this.List[x + 4] + ' to ' + this.List[x + 2] + ' on ' + this.List[x] + ' for ' + this.List[x + 3];
                 console.log(debit);
             }
             x = x + 5;
@@ -167,9 +218,9 @@ var findAccount = (function () {
         var y = 0;
         console.log('Credits:');
         var credit = "";
-        while (y < 745) {
+        while (y < 1000) {
             if (this.List[y + 2] == name) {
-                credit = ' - From ' + this.List[y + 1] + ' on ' + this.List[y] + ' for ' + this.List[y + 3];
+                credit = ' - £' + this.List[y + 4] + ' from ' + this.List[y + 1] + ' on ' + this.List[y] + ' for ' + this.List[y + 3];
                 console.log(credit);
             }
             y = y + 5;
